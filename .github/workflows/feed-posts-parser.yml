@@ -12,12 +12,13 @@ jobs:
       contents: read
       issues: write
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@e8d4307400f9427dba7cb98e488d6ab85f1cec5f # v4
+
       - name: Parse feed posts
-        uses: xaoxuu/feed-posts-parser@0107be40bed6ec4924d5e541ccce935dfbaa1507
+        run: python scripts/update_feeds.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          posts_count: 3
 
   generate:
     needs: parse-feeds

@@ -12,14 +12,13 @@ jobs:
       contents: read
       issues: write
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@e8d4307400f9427dba7cb98e488d6ab85f1cec5f # v4
+
       - name: Check site reachability
-        uses: xaoxuu/links-checker@c892d42fe441593786947757b9d5fdfa09aa239f
+        run: python scripts/check_reachability.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          checker: reachability
-          unreachable_label: 失联
-          exclude_issue_with_labels: 审核中, 白名单
 
   generate:
     needs: check-links

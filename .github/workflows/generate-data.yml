@@ -20,13 +20,9 @@ jobs:
         uses: actions/checkout@e8d4307400f9427dba7cb98e488d6ab85f1cec5f # v4
 
       - name: Generate v2/data.json
-        uses: xaoxuu/issues2json@7aba0f1e8c5005c41f6b1612b8d5e0e598b3b723
+        run: python scripts/generate_data.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          sort: posts-desc
-          exclude_issue_with_labels: 审核中, 风险网站
-          hide_labels: 白名单
 
       - name: Publish output branch
         shell: bash
