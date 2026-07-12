@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">默认友链头像</title>
+  <desc id="desc">蓝紫色夜空中的抽象水晶</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111936"/>
+      <stop offset="0.55" stop-color="#27346f"/>
+      <stop offset="1" stop-color="#552d74"/>
+    </linearGradient>
+    <linearGradient id="crystal" x1="0" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#e9fbff"/>
+      <stop offset="0.38" stop-color="#8edcf4"/>
+      <stop offset="0.72" stop-color="#9b8de8"/>
+      <stop offset="1" stop-color="#6252b8"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#b8f4ff" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#b8f4ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="256" cy="272" r="188" fill="url(#glow)"/>
+  <g fill="#fff" opacity="0.9">
+    <circle cx="118" cy="142" r="5"/>
+    <circle cx="393" cy="115" r="7"/>
+    <circle cx="422" cy="244" r="4"/>
+    <circle cx="91" cy="310" r="4"/>
+    <path d="M155 82h6v17h17v6h-17v17h-6v-17h-17v-6h17z"/>
+    <path d="M372 322h5v14h14v5h-14v14h-5v-14h-14v-5h14z"/>
+  </g>
+  <path d="M256 105 367 225 310 405H202l-57-180z" fill="url(#crystal)" stroke="#d9f7ff" stroke-width="8" stroke-linejoin="round"/>
+  <path d="m256 105 28 120-28 180-55-180z" fill="#dff8ff" opacity="0.48"/>
+  <path d="m256 105 111 120-83 0z" fill="#fff" opacity="0.28"/>
+  <path d="m145 225 56 0 55 180-54 0z" fill="#6a63c9" opacity="0.58"/>
+  <path d="M145 225h222M201 225l55-120 28 120 26 180M201 225l55 180" fill="none" stroke="#eefcff" stroke-width="5" stroke-linejoin="round" opacity="0.72"/>
+</svg>

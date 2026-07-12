@@ -1,0 +1,39 @@
+name: Generate Friend Data
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: friends-output
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@e8d4307400f9427dba7cb98e488d6ab85f1cec5f # v4
+
+      - name: Generate v2/data.json
+        uses: xaoxuu/issues2json@7aba0f1e8c5005c41f6b1612b8d5e0e598b3b723
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          sort: posts-desc
+          exclude_issue_with_labels: 审核中, 风险网站
+          hide_labels: 白名单
+
+      - name: Publish output branch
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B output
+          git add --all
+          git commit -m 'Update friend data' || exit 0
+          git push --force origin output

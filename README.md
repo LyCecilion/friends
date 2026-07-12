@@ -1,38 +1,35 @@
-**申请前须知**
+# CrystaRin 友链
 
-- 本站友链均为动态友链，页面加载后通过请求接口渲染出友链数据。
-- 本站友链按最新一篇文章发布时间倒序排序，越活跃的博主就越靠前。
-- 没有 feed 链接的可能会排在最后。
-- 本站仅定期解析 feed 地址，不会爬取其它地址。
+本仓库通过 GitHub Issues 管理 [CrystaRin 镜雨亭](https://crystal.stellalyr.ink/) 的友链数据，最终结果展示于 [友链页面](https://crystal.stellalyr.ink/social/)。
 
-<br>
+## 申请方式
 
-**自助友链申请流程**
+1. 使用 [友链申请模板](https://github.com/LyCecilion/friends/issues/new/choose) 创建 Issue。
+2. 填写站点标题、地址以及可选的图标、简介和订阅地址。
+3. 等待零音人工审核；无需在申请前添加本站友链。
+4. `审核中` 标签被移除后，友链会自动同步至展示页面。仓库所有者创建的申请会自动通过。
 
-1. 确保符合**安全合规**的硬性条件，且不会对本站进行高频爬取。
-2. 提交友链意向申请，如实填写。（此时不必提前添加本站为友链）
-3. 完成友链任务，未完成的不要随意勾选。（如果迟迟没有通过审核，请检查 issue 中列出的任务是否完成。）
-4. 博主审核通过，此时请及时添加本站友链。
+申请站点应当安全合规。请勿高频访问本站页面或订阅源。
 
-<br>
+没有 feed 的友链仍会正常展示，但可能排在已提供 feed 且近期更新的站点之后。站点信息发生变化时，可以直接编辑原 Issue。
 
-**如何提交意向申请？**
+## 本站信息
 
-按照 [Issue 模板](https://github.com/xaoxuu/friends/issues/new/choose) 内容填写并提交，当条件均达成后，博主会通过审核，通过后稍等片刻即可在友链页面看到您的友链。
-
-<br>
-
-**本站信息**
-
-当你添加本站友链时，建议复制以下信息：
+添加 CrystaRin 友链时，可以使用以下信息：
 
 ```yaml
-title: xaoxuu
-url: https://xaoxuu.com
-avatar: https://cn.cravatar.com/avatar/15e59a60168a6ce1bfc3eddfca8c5a54?s=512
-screenshot: https://xaoxuu.com/assets/xaoxuu/2022/10/23/63542895cfd29.png
-description: For all time, always.
-feed: https://xaoxuu.com/atom.xml
+title: CrystaRin 镜雨亭
+url: https://crystal.stellalyr.ink/
+avatar: https://crystal.stellalyr.ink/assets/perlica_avatar.png
+description: 我们不是理想的陈述者，而是理想的践行者。
+feed: https://crystal.stellalyr.ink/atom.xml
 ```
 
-> 头像地址末尾的 `s=512` 是尺寸，如果显示框架较小可以自行调节至合适的尺寸。
+## 数据同步
+
+- Issue 创建或内容、标签、状态发生变化时，自动重新生成友链数据。
+- 每天检查一次站点可达性，并更新失联状态。
+- 每天解析一次订阅源，最多记录每个站点最新的 3 篇文章。
+- 生成的数据位于 `output` 分支的 `v2/data.json`。
+
+带有 `审核中` 或 `风险网站` 标签的 Issue 不会进入公开数据。只有仓库所有者可以通过移除 `审核中` 标签批准外部申请。

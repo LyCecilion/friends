@@ -1,0 +1,37 @@
+name: Approve Owner Submission
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  approve:
+    if: github.event.issue.author_association == 'OWNER'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remove review label from owner submission
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v7
+        with:
+          script: |
+            const reviewLabel = '审核中';
+            const labels = context.payload.issue.labels.map((label) => label.name);
+
+            if (labels.includes(reviewLabel)) {
+              await github.rest.issues.removeLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                name: reviewLabel,
+              });
+            }
+
+  generate:
+    needs: approve
+    permissions:
+      contents: write
+      issues: read
+    uses: ./.github/workflows/generate-data.yml
