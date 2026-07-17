@@ -1,6 +1,6 @@
 # CrystaRin 友链
 
-本仓库通过 GitHub Issues 管理 [CrystaRin 镜雨亭](https://crystal.stellalyr.ink/) 的友链数据，最终结果展示于 [友链页面](https://crystal.stellalyr.ink/social/)。
+本仓库通过 GitHub Issues 管理 [CrystaRin镜雨亭](https://crystal.stellalyr.ink/) 的友链数据，最终结果展示于 [友链页面](https://crystal.stellalyr.ink/social/)。
 
 ## 申请方式
 
@@ -18,7 +18,7 @@
 添加 CrystaRin 友链时，可以使用以下信息：
 
 ```yaml
-title: CrystaRin 镜雨亭
+title: CrystaRin镜雨亭
 url: https://crystal.stellalyr.ink/
 avatar: https://crystal.stellalyr.ink/assets/perlica_avatar.png
 description: 我们不是理想的陈述者，而是理想的践行者。
